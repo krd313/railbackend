@@ -1,0 +1,9 @@
+Done. Now set up DNS at your registrar:
+
+For the apex domain (krd313.work):
+
+If your DNS provider supports CNAME flattening / ALIAS / ANAME (Cloudflare, DNSimple, Bunny.net, Namecheap, easyDNS, Gandi): Create a CNAME/ALIAS record at the root pointing to cname.railway.app
+If not (AWS Route 53 without ALIAS, default GoDaddy, Hostinger, Bluehost): Either move DNS to a provider that supports flattening, or use a subdomain like www.krd313.work instead.
+For the API subdomain (api.krd313.work): Create a CNAME record: api.krd313.work → cname.railway.app
+
+Once DNS propagates, your site will be live at krd313.work (frontend) and api.krd313.work (backend).

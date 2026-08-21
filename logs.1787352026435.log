@@ -1,0 +1,1001 @@
+2026-08-21T22:34:14.760190395Z [err]  "} 
+2026-08-21T22:34:14.760201689Z [inf]  
+2026-08-21T22:34:14.760204018Z [inf]      855▕                 : QueryException::class;
+2026-08-21T22:34:14.760213004Z [inf]     Illuminate\Database\QueryException 
+2026-08-21T22:34:14.760222389Z [inf]      856▕ 
+2026-08-21T22:34:14.760226661Z [inf]  
+2026-08-21T22:34:14.760233662Z [inf]    could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`)
+2026-08-21T22:34:14.760239561Z [inf]  
+2026-08-21T22:34:14.760245791Z [inf]    at vendor/laravel/framework/src/Illuminate/Database/Connection.php:857
+2026-08-21T22:34:14.760253766Z [inf]      853▕             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+2026-08-21T22:34:14.764889110Z [inf]    ➜ 857▕             $exception = new $exceptionType(
+2026-08-21T22:34:14.764899657Z [inf]      858▕                 $this->getNameWithReadWriteType(),
+2026-08-21T22:34:14.764907528Z [inf]      859▕                 $query,
+2026-08-21T22:34:14.764912418Z [inf]      860▕                 $this->prepareBindings($bindings),
+2026-08-21T22:34:14.764917440Z [inf]      861▕                 $e,
+2026-08-21T22:34:14.764923678Z [inf]  
+2026-08-21T22:34:14.764929442Z [inf]        [2m+39 vendor frames [22m
+2026-08-21T22:34:14.764935085Z [inf]  
+2026-08-21T22:34:14.764940022Z [inf]    40  artisan:16
+2026-08-21T22:34:14.764953796Z [inf]        Illuminate\Foundation\Application::handleCommand()
+2026-08-21T22:34:14.764958905Z [inf]  
+2026-08-21T22:34:16.512527709Z [inf]  Running migrations and seeding database ...
+2026-08-21T22:34:16.512535546Z [err]  [2026-08-21 22:34:16] production.ERROR: could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) at /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php:857)
+2026-08-21T22:34:16.512540208Z [err]  [stacktrace]
+2026-08-21T22:34:16.512544516Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:16.512549081Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:16.512553696Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:16.512558775Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:16.512564062Z [err]  #4 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:16.512569143Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:16.512573611Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:16.514010882Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:16.514021090Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:16.514028978Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:16.514037048Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:16.514044792Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:16.514052961Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:16.514060235Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:16.514066084Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:16.514072283Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:16.514077511Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:16.515643376Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:16.515654507Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:16.515660664Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:16.515665017Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:16.515670943Z [err]  #21 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:16.515675603Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:16.515680059Z [err]  #23 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:16.515684063Z [err]  #24 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:16.515689298Z [err]  #25 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:16.515695592Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:16.515701929Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:16.515707613Z [err]  #28 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:16.515713705Z [err]  #29 {main}
+2026-08-21T22:34:16.515719981Z [err]  
+2026-08-21T22:34:16.515729029Z [err]  [previous exception] [object] (PDOException(code: 0): could not find driver at /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+2026-08-21T22:34:16.518231362Z [err]  [stacktrace]
+2026-08-21T22:34:16.518239052Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+2026-08-21T22:34:16.518244444Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
+2026-08-21T22:34:16.518252614Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
+2026-08-21T22:34:16.518258722Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(220): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
+2026-08-21T22:34:16.518265060Z [err]  #4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->{closure:Illuminate\\Database\\Connectors\\ConnectionFactory::createPdoResolverWithHosts():213}()
+2026-08-21T22:34:16.518270629Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1297): call_user_func()
+2026-08-21T22:34:16.518275283Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1335): Illuminate\\Database\\Connection->getPdo()
+2026-08-21T22:34:16.518280522Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(542): Illuminate\\Database\\Connection->getReadPdo()
+2026-08-21T22:34:16.518312037Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(435): Illuminate\\Database\\Connection->getPdoForSelect()
+2026-08-21T22:34:16.518319092Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(846): Illuminate\\Database\\Connection->{closure:Illuminate\\Database\\Connection::select():426}()
+2026-08-21T22:34:16.518325258Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:16.521672523Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:16.521680767Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:16.521685773Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:16.521690754Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:16.521695564Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:16.521701349Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:16.521706784Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:16.521712282Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:16.521717539Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:16.521723398Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:16.524199432Z [err]  #21 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:16.524207839Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:16.524214217Z [err]  #23 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:16.524220274Z [err]  #24 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:16.524226796Z [err]  #25 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:16.524232512Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:16.524238950Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:16.524244467Z [err]  #28 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:16.524249915Z [err]  #29 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:16.524255610Z [err]  #30 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:16.524261051Z [err]  #31 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:16.524266818Z [err]  #32 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:16.526813488Z [err]  #33 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:16.526815395Z [inf]      856▕ 
+2026-08-21T22:34:16.526824583Z [err]  #34 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:16.526831560Z [err]  #35 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:16.526837985Z [err]  #36 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:16.526844645Z [err]  #37 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:16.526850724Z [err]  #38 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:16.526856587Z [err]  #39 {main}
+2026-08-21T22:34:16.526862206Z [err]  "} 
+2026-08-21T22:34:16.526868286Z [inf]  
+2026-08-21T22:34:16.526874074Z [inf]     Illuminate\Database\QueryException 
+2026-08-21T22:34:16.526880604Z [inf]  
+2026-08-21T22:34:16.526886901Z [inf]    could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`)
+2026-08-21T22:34:16.526892739Z [inf]  
+2026-08-21T22:34:16.526898474Z [inf]    at vendor/laravel/framework/src/Illuminate/Database/Connection.php:857
+2026-08-21T22:34:16.526904209Z [inf]      853▕             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+2026-08-21T22:34:16.526910821Z [inf]      854▕                 ? UniqueConstraintViolationException::class
+2026-08-21T22:34:16.526917044Z [inf]      855▕                 : QueryException::class;
+2026-08-21T22:34:16.528892039Z [inf]    ➜ 857▕             $exception = new $exceptionType(
+2026-08-21T22:34:16.528901806Z [inf]      858▕                 $this->getNameWithReadWriteType(),
+2026-08-21T22:34:16.528907718Z [inf]      859▕                 $query,
+2026-08-21T22:34:16.528912695Z [inf]      860▕                 $this->prepareBindings($bindings),
+2026-08-21T22:34:16.528917382Z [inf]      861▕                 $e,
+2026-08-21T22:34:16.528922455Z [inf]  
+2026-08-21T22:34:16.528927223Z [inf]        [2m+39 vendor frames [22m
+2026-08-21T22:34:16.528932353Z [inf]  
+2026-08-21T22:34:16.528940910Z [inf]    40  artisan:16
+2026-08-21T22:34:16.528945491Z [inf]        Illuminate\Foundation\Application::handleCommand()
+2026-08-21T22:34:16.528949951Z [inf]  
+2026-08-21T22:34:17.526756975Z [inf]  Running migrations and seeding database ...
+2026-08-21T22:34:17.610288194Z [err]  [2026-08-21 22:34:17] production.ERROR: could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) at /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php:857)
+2026-08-21T22:34:17.610301914Z [err]  [stacktrace]
+2026-08-21T22:34:17.610308812Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:17.610317405Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:17.610326182Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:17.610333012Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:17.610339265Z [err]  #4 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:17.610346283Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:17.610352386Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:17.612212058Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:17.612225957Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:17.612233708Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:17.612241185Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:17.612256734Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:17.612265653Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:17.612272454Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:17.612279242Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:17.612285385Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:17.612292914Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:17.614510072Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:17.614518344Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:17.614524461Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:17.614531203Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:17.614537169Z [err]  #21 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:17.614543795Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:17.614549705Z [err]  #23 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:17.614555794Z [err]  #24 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:17.614562237Z [err]  #25 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:17.614568205Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:17.614573894Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:17.614579777Z [err]  #28 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:17.614585401Z [err]  #29 {main}
+2026-08-21T22:34:17.614591628Z [err]  
+2026-08-21T22:34:17.614597581Z [err]  [previous exception] [object] (PDOException(code: 0): could not find driver at /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+2026-08-21T22:34:17.616178115Z [err]  [stacktrace]
+2026-08-21T22:34:17.616185536Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+2026-08-21T22:34:17.616191377Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
+2026-08-21T22:34:17.616197279Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
+2026-08-21T22:34:17.616203439Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(220): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
+2026-08-21T22:34:17.616210133Z [err]  #4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->{closure:Illuminate\\Database\\Connectors\\ConnectionFactory::createPdoResolverWithHosts():213}()
+2026-08-21T22:34:17.616215944Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1297): call_user_func()
+2026-08-21T22:34:17.616221676Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1335): Illuminate\\Database\\Connection->getPdo()
+2026-08-21T22:34:17.616227808Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(542): Illuminate\\Database\\Connection->getReadPdo()
+2026-08-21T22:34:17.616233528Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(435): Illuminate\\Database\\Connection->getPdoForSelect()
+2026-08-21T22:34:17.616239340Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(846): Illuminate\\Database\\Connection->{closure:Illuminate\\Database\\Connection::select():426}()
+2026-08-21T22:34:17.616246160Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:17.617804510Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:17.617810502Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:17.617815086Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:17.617819924Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:17.617824342Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:17.617829039Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:17.617833793Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:17.617838529Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:17.617842614Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:17.617847791Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:17.619746070Z [err]  #21 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:17.619759838Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:17.619775782Z [err]  #23 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:17.619783302Z [err]  #24 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:17.619791858Z [err]  #25 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:17.619801243Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:17.619808691Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:17.619814186Z [err]  #28 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:17.619819898Z [err]  #29 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:17.619825276Z [err]  #30 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:17.619830047Z [err]  #31 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:17.619835563Z [err]  #32 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:17.622115140Z [err]  #33 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:17.622117974Z [inf]      854▕                 ? UniqueConstraintViolationException::class
+2026-08-21T22:34:17.622126989Z [err]  #34 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:17.622130090Z [inf]      855▕                 : QueryException::class;
+2026-08-21T22:34:17.622135155Z [err]  #35 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:17.622138449Z [inf]      856▕ 
+2026-08-21T22:34:17.622142618Z [err]  #36 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:17.622148542Z [err]  #37 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:17.622155242Z [err]  #38 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:17.622161408Z [err]  #39 {main}
+2026-08-21T22:34:17.622167797Z [err]  "} 
+2026-08-21T22:34:17.622174006Z [inf]  
+2026-08-21T22:34:17.622180875Z [inf]     Illuminate\Database\QueryException 
+2026-08-21T22:34:17.622186729Z [inf]  
+2026-08-21T22:34:17.622192428Z [inf]    could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`)
+2026-08-21T22:34:17.622197666Z [inf]  
+2026-08-21T22:34:17.622203543Z [inf]    at vendor/laravel/framework/src/Illuminate/Database/Connection.php:857
+2026-08-21T22:34:17.622209329Z [inf]      853▕             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+2026-08-21T22:34:17.624885876Z [inf]    ➜ 857▕             $exception = new $exceptionType(
+2026-08-21T22:34:17.624899116Z [inf]      858▕                 $this->getNameWithReadWriteType(),
+2026-08-21T22:34:17.624905808Z [inf]      859▕                 $query,
+2026-08-21T22:34:17.624912178Z [inf]      860▕                 $this->prepareBindings($bindings),
+2026-08-21T22:34:17.624919924Z [inf]      861▕                 $e,
+2026-08-21T22:34:17.624927233Z [inf]  
+2026-08-21T22:34:17.624933197Z [inf]        [2m+39 vendor frames [22m
+2026-08-21T22:34:17.624939383Z [inf]  
+2026-08-21T22:34:17.624945106Z [inf]    40  artisan:16
+2026-08-21T22:34:17.624950729Z [inf]        Illuminate\Foundation\Application::handleCommand()
+2026-08-21T22:34:17.624956708Z [inf]  
+2026-08-21T22:34:18.873623110Z [inf]  Running migrations and seeding database ...
+2026-08-21T22:34:19.532961419Z [err]  [2026-08-21 22:34:19] production.ERROR: could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) at /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php:857)
+2026-08-21T22:34:19.532968722Z [err]  [stacktrace]
+2026-08-21T22:34:19.532974905Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:19.532981276Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:19.532987953Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:19.532994586Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:19.533001313Z [err]  #4 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:19.533007859Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:19.533014262Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:19.534753898Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:19.534763273Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:19.534767787Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:19.534772353Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:19.534779039Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:19.534783810Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:19.534788411Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:19.534792548Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:19.534797047Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:19.534801318Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:19.536162852Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:19.536168504Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:19.536172997Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:19.536177614Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:19.536182782Z [err]  #21 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:19.536187357Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:19.536191682Z [err]  #23 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:19.536196177Z [err]  #24 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:19.536200200Z [err]  #25 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:19.536206150Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:19.536212686Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:19.536217921Z [err]  #28 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:19.536223645Z [err]  #29 {main}
+2026-08-21T22:34:19.536229929Z [err]  
+2026-08-21T22:34:19.536235263Z [err]  [previous exception] [object] (PDOException(code: 0): could not find driver at /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+2026-08-21T22:34:19.538142635Z [err]  [stacktrace]
+2026-08-21T22:34:19.538157761Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+2026-08-21T22:34:19.538169169Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
+2026-08-21T22:34:19.538175570Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
+2026-08-21T22:34:19.538180895Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(220): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
+2026-08-21T22:34:19.538186402Z [err]  #4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->{closure:Illuminate\\Database\\Connectors\\ConnectionFactory::createPdoResolverWithHosts():213}()
+2026-08-21T22:34:19.538193503Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1297): call_user_func()
+2026-08-21T22:34:19.538200350Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1335): Illuminate\\Database\\Connection->getPdo()
+2026-08-21T22:34:19.538206156Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(542): Illuminate\\Database\\Connection->getReadPdo()
+2026-08-21T22:34:19.538212174Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(435): Illuminate\\Database\\Connection->getPdoForSelect()
+2026-08-21T22:34:19.538217537Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(846): Illuminate\\Database\\Connection->{closure:Illuminate\\Database\\Connection::select():426}()
+2026-08-21T22:34:19.538223835Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:19.539819170Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:19.539839214Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:19.539846166Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:19.539852319Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:19.539857148Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:19.539862336Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:19.539866667Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:19.539926751Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:19.539932036Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:19.539936608Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:19.542090552Z [err]  #21 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:19.542195404Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:19.542201770Z [err]  #23 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:19.542207087Z [err]  #24 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:19.542212696Z [err]  #25 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:19.542218430Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:19.542224045Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:19.542230751Z [err]  #28 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:19.542237607Z [err]  #29 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:19.542242889Z [err]  #30 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:19.542247866Z [err]  #31 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:19.542252735Z [err]  #32 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:19.543857297Z [err]  #33 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:19.543859816Z [inf]      854▕                 ? UniqueConstraintViolationException::class
+2026-08-21T22:34:19.543866606Z [err]  #34 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:19.543874385Z [err]  #35 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:19.543879060Z [inf]      855▕                 : QueryException::class;
+2026-08-21T22:34:19.543882477Z [err]  #36 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:19.543887981Z [inf]      856▕ 
+2026-08-21T22:34:19.543890332Z [err]  #37 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:19.543896393Z [err]  #38 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:19.543903856Z [err]  #39 {main}
+2026-08-21T22:34:19.543909914Z [err]  "} 
+2026-08-21T22:34:19.543916591Z [inf]  
+2026-08-21T22:34:19.543923059Z [inf]     Illuminate\Database\QueryException 
+2026-08-21T22:34:19.543929087Z [inf]  
+2026-08-21T22:34:19.543935120Z [inf]    could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`)
+2026-08-21T22:34:19.543939605Z [inf]  
+2026-08-21T22:34:19.543943849Z [inf]    at vendor/laravel/framework/src/Illuminate/Database/Connection.php:857
+2026-08-21T22:34:19.543948306Z [inf]      853▕             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+2026-08-21T22:34:19.546163554Z [inf]    ➜ 857▕             $exception = new $exceptionType(
+2026-08-21T22:34:19.546169423Z [inf]      858▕                 $this->getNameWithReadWriteType(),
+2026-08-21T22:34:19.546174242Z [inf]      859▕                 $query,
+2026-08-21T22:34:19.546178685Z [inf]      860▕                 $this->prepareBindings($bindings),
+2026-08-21T22:34:19.546182924Z [inf]      861▕                 $e,
+2026-08-21T22:34:19.546187442Z [inf]  
+2026-08-21T22:34:19.546191910Z [inf]        [2m+39 vendor frames [22m
+2026-08-21T22:34:19.546196188Z [inf]  
+2026-08-21T22:34:19.546200495Z [inf]    40  artisan:16
+2026-08-21T22:34:19.546204704Z [inf]        Illuminate\Foundation\Application::handleCommand()
+2026-08-21T22:34:19.546208805Z [inf]  
+2026-08-21T22:34:20.556195318Z [inf]  Running migrations and seeding database ...
+2026-08-21T22:34:20.556204088Z [err]  [2026-08-21 22:34:20] production.ERROR: could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) at /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php:857)
+2026-08-21T22:34:20.556210942Z [err]  [stacktrace]
+2026-08-21T22:34:20.556218825Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:20.556226300Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:20.556233388Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:20.556239966Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:20.556246189Z [err]  #4 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:20.556253226Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:20.556260079Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:20.557072398Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:20.557082267Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:20.557089940Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:20.557097705Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:20.557104242Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:20.557111266Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:20.557119300Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:20.557126039Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:20.557132600Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:20.557139293Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:20.558935235Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:20.558939026Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:20.558945365Z [err]  #28 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:20.558947738Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:20.558953126Z [err]  #29 {main}
+2026-08-21T22:34:20.558954188Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:20.558959381Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:20.558965700Z [err]  #21 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:20.558965970Z [err]  
+2026-08-21T22:34:20.558972855Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:20.558972884Z [err]  [previous exception] [object] (PDOException(code: 0): could not find driver at /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+2026-08-21T22:34:20.558979493Z [err]  #23 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:20.558985370Z [err]  #24 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:20.558992313Z [err]  #25 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:20.558997395Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:20.561710163Z [err]  [stacktrace]
+2026-08-21T22:34:20.561719800Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+2026-08-21T22:34:20.561726718Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
+2026-08-21T22:34:20.561732957Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
+2026-08-21T22:34:20.561739385Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(220): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
+2026-08-21T22:34:20.561745615Z [err]  #4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->{closure:Illuminate\\Database\\Connectors\\ConnectionFactory::createPdoResolverWithHosts():213}()
+2026-08-21T22:34:20.561751756Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1297): call_user_func()
+2026-08-21T22:34:20.561757381Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1335): Illuminate\\Database\\Connection->getPdo()
+2026-08-21T22:34:20.561766348Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(542): Illuminate\\Database\\Connection->getReadPdo()
+2026-08-21T22:34:20.561772219Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(435): Illuminate\\Database\\Connection->getPdoForSelect()
+2026-08-21T22:34:20.561778345Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(846): Illuminate\\Database\\Connection->{closure:Illuminate\\Database\\Connection::select():426}()
+2026-08-21T22:34:20.561783723Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:20.562698080Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:20.562705991Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:20.562712854Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:20.562719653Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:20.562725803Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:20.562732156Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:20.562738601Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:20.562745177Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:20.562752203Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:20.562758486Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:20.564786536Z [err]  #21 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:20.564796334Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:20.564803276Z [err]  #23 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:20.565163858Z [err]  #24 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:20.565172157Z [err]  #25 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:20.565178746Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:20.565185466Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:20.565192930Z [err]  #28 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:20.565199292Z [err]  #29 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:20.565206106Z [err]  #30 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:20.565213517Z [err]  #31 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:20.565219165Z [err]  #32 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:20.566683325Z [err]  #33 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:20.566695052Z [err]  #34 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:20.566702391Z [err]  #35 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:20.566709563Z [err]  #36 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:20.566716161Z [err]  #37 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:20.566725237Z [err]  #38 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:20.566731396Z [err]  #39 {main}
+2026-08-21T22:34:20.566742603Z [err]  "} 
+2026-08-21T22:34:20.566748834Z [inf]  
+2026-08-21T22:34:20.566755402Z [inf]     Illuminate\Database\QueryException 
+2026-08-21T22:34:20.566761269Z [inf]  
+2026-08-21T22:34:20.566767343Z [inf]    could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`)
+2026-08-21T22:34:20.566773094Z [inf]  
+2026-08-21T22:34:20.566779092Z [inf]    at vendor/laravel/framework/src/Illuminate/Database/Connection.php:857
+2026-08-21T22:34:20.566785082Z [inf]      853▕             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+2026-08-21T22:34:20.566791095Z [inf]      854▕                 ? UniqueConstraintViolationException::class
+2026-08-21T22:34:20.566798022Z [inf]      855▕                 : QueryException::class;
+2026-08-21T22:34:20.566805737Z [inf]      856▕ 
+2026-08-21T22:34:20.569517848Z [inf]    ➜ 857▕             $exception = new $exceptionType(
+2026-08-21T22:34:20.569524662Z [inf]      858▕                 $this->getNameWithReadWriteType(),
+2026-08-21T22:34:20.569529924Z [inf]      859▕                 $query,
+2026-08-21T22:34:20.569534801Z [inf]      860▕                 $this->prepareBindings($bindings),
+2026-08-21T22:34:20.569539722Z [inf]      861▕                 $e,
+2026-08-21T22:34:20.569544551Z [inf]  
+2026-08-21T22:34:20.569549841Z [inf]        [2m+39 vendor frames [22m
+2026-08-21T22:34:20.569554568Z [inf]  
+2026-08-21T22:34:20.569560263Z [inf]    40  artisan:16
+2026-08-21T22:34:20.569566396Z [inf]        Illuminate\Foundation\Application::handleCommand()
+2026-08-21T22:34:20.569571967Z [inf]  
+2026-08-21T22:34:21.790474265Z [inf]  Running migrations and seeding database ...
+2026-08-21T22:34:21.965700880Z [err]  [2026-08-21 22:34:21] production.ERROR: could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) at /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php:857)
+2026-08-21T22:34:21.965707924Z [err]  [stacktrace]
+2026-08-21T22:34:21.965711935Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:21.965716431Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:21.965721797Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:21.965726336Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:21.965730658Z [err]  #4 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:21.965736110Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:21.965740387Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:21.967246535Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:21.967257742Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:21.967264625Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:21.967271128Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:21.967277761Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:21.967284439Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:21.967290748Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:21.967297212Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:21.967303207Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:21.967318453Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:21.969203763Z [err]  #23 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:21.969213457Z [err]  #24 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:21.969222905Z [err]  #25 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:21.969232637Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:21.969239404Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:21.969246123Z [err]  #28 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:21.969252152Z [err]  #29 {main}
+2026-08-21T22:34:21.969258896Z [err]  
+2026-08-21T22:34:21.969265034Z [err]  [previous exception] [object] (PDOException(code: 0): could not find driver at /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+2026-08-21T22:34:21.969277834Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:21.969284908Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:21.969291198Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:21.969297279Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:21.969303286Z [err]  #21 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:21.969309403Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:21.971518728Z [err]  [stacktrace]
+2026-08-21T22:34:21.971528669Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+2026-08-21T22:34:21.971536056Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
+2026-08-21T22:34:21.971541904Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
+2026-08-21T22:34:21.971547844Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(220): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
+2026-08-21T22:34:21.971553714Z [err]  #4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->{closure:Illuminate\\Database\\Connectors\\ConnectionFactory::createPdoResolverWithHosts():213}()
+2026-08-21T22:34:21.971558694Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1297): call_user_func()
+2026-08-21T22:34:21.971565364Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1335): Illuminate\\Database\\Connection->getPdo()
+2026-08-21T22:34:21.971571040Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(542): Illuminate\\Database\\Connection->getReadPdo()
+2026-08-21T22:34:21.971576525Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(435): Illuminate\\Database\\Connection->getPdoForSelect()
+2026-08-21T22:34:21.971583292Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(846): Illuminate\\Database\\Connection->{closure:Illuminate\\Database\\Connection::select():426}()
+2026-08-21T22:34:21.971588581Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:21.973183807Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:21.973193463Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:21.973199167Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:21.973205206Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:21.973210947Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:21.973216743Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:21.973222695Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:21.973228486Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:21.973234030Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:21.973239481Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:21.975154586Z [err]  #21 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:21.975166222Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:21.975175413Z [err]  #23 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:21.975183098Z [err]  #24 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:21.975191194Z [err]  #25 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:21.975199004Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:21.975206848Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:21.975213062Z [err]  #28 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:21.975221397Z [err]  #29 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:21.975230104Z [err]  #30 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:21.975238673Z [err]  #31 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:21.975245661Z [err]  #32 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:21.977015982Z [err]  #33 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:21.977023291Z [err]  #34 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:21.977029226Z [err]  #35 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:21.977035148Z [err]  #36 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:21.977041370Z [err]  #37 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:21.977047389Z [err]  #38 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:21.977052532Z [err]  #39 {main}
+2026-08-21T22:34:21.977062997Z [err]  "} 
+2026-08-21T22:34:21.977068474Z [inf]  
+2026-08-21T22:34:21.977073715Z [inf]     Illuminate\Database\QueryException 
+2026-08-21T22:34:21.977078901Z [inf]  
+2026-08-21T22:34:21.977084328Z [inf]    could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`)
+2026-08-21T22:34:21.977090218Z [inf]  
+2026-08-21T22:34:21.977095912Z [inf]    at vendor/laravel/framework/src/Illuminate/Database/Connection.php:857
+2026-08-21T22:34:21.977101692Z [inf]      853▕             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+2026-08-21T22:34:21.977107499Z [inf]      854▕                 ? UniqueConstraintViolationException::class
+2026-08-21T22:34:21.977112639Z [inf]      855▕                 : QueryException::class;
+2026-08-21T22:34:21.977118484Z [inf]      856▕ 
+2026-08-21T22:34:21.978848860Z [inf]    ➜ 857▕             $exception = new $exceptionType(
+2026-08-21T22:34:21.978866110Z [inf]      858▕                 $this->getNameWithReadWriteType(),
+2026-08-21T22:34:21.978875761Z [inf]      859▕                 $query,
+2026-08-21T22:34:21.978883353Z [inf]      860▕                 $this->prepareBindings($bindings),
+2026-08-21T22:34:21.978889758Z [inf]      861▕                 $e,
+2026-08-21T22:34:21.978897423Z [inf]  
+2026-08-21T22:34:21.978904255Z [inf]        [2m+39 vendor frames [22m
+2026-08-21T22:34:21.978910836Z [inf]  
+2026-08-21T22:34:21.978918018Z [inf]    40  artisan:16
+2026-08-21T22:34:21.978924892Z [inf]        Illuminate\Foundation\Application::handleCommand()
+2026-08-21T22:34:21.978931679Z [inf]  
+2026-08-21T22:34:23.629900586Z [inf]  Running migrations and seeding database ...
+2026-08-21T22:34:23.629905046Z [err]  [2026-08-21 22:34:23] production.ERROR: could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) at /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php:857)
+2026-08-21T22:34:23.629909423Z [err]  [stacktrace]
+2026-08-21T22:34:23.629913799Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:23.629918437Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:23.629923047Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:23.629927879Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:23.629932310Z [err]  #4 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:23.629936613Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:23.629940271Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:23.632345518Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:23.632356298Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:23.632362865Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:23.632369177Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:23.632375668Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:23.632381706Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:23.632388388Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:23.632394191Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:23.632400060Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:23.632406406Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:23.634837800Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:23.634849416Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:23.634858839Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:23.634864998Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:23.634871438Z [err]  #21 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:23.634880104Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:23.634886533Z [err]  #23 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:23.634892925Z [err]  #24 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:23.634899387Z [err]  #25 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:23.634907423Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:23.634913538Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:23.634919932Z [err]  #28 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:23.634925822Z [err]  #29 {main}
+2026-08-21T22:34:23.634932599Z [err]  
+2026-08-21T22:34:23.634939338Z [err]  [previous exception] [object] (PDOException(code: 0): could not find driver at /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+2026-08-21T22:34:23.637096061Z [err]  [stacktrace]
+2026-08-21T22:34:23.637105903Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+2026-08-21T22:34:23.637112809Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
+2026-08-21T22:34:23.637120228Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
+2026-08-21T22:34:23.637126862Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(220): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
+2026-08-21T22:34:23.637134702Z [err]  #4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->{closure:Illuminate\\Database\\Connectors\\ConnectionFactory::createPdoResolverWithHosts():213}()
+2026-08-21T22:34:23.637141051Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1297): call_user_func()
+2026-08-21T22:34:23.637147856Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1335): Illuminate\\Database\\Connection->getPdo()
+2026-08-21T22:34:23.637155300Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(542): Illuminate\\Database\\Connection->getReadPdo()
+2026-08-21T22:34:23.637162638Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(435): Illuminate\\Database\\Connection->getPdoForSelect()
+2026-08-21T22:34:23.637170769Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(846): Illuminate\\Database\\Connection->{closure:Illuminate\\Database\\Connection::select():426}()
+2026-08-21T22:34:23.637177054Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:23.641230128Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:23.641237811Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:23.641244135Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:23.641250993Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:23.641257396Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:23.641266360Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:23.641273503Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:23.641280232Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:23.641286782Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:23.641293301Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:23.642769927Z [err]  #21 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:23.642787761Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:23.642802240Z [err]  #23 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:23.642811228Z [err]  #24 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:23.642818731Z [err]  #25 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:23.642827595Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:23.642835224Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:23.642842379Z [err]  #28 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:23.642849561Z [err]  #29 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:23.642857436Z [err]  #30 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:23.642864316Z [err]  #31 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:23.642871225Z [err]  #32 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:23.645445150Z [inf]    at vendor/laravel/framework/src/Illuminate/Database/Connection.php:857
+2026-08-21T22:34:23.645454628Z [err]  #33 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:23.645461868Z [inf]      853▕             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+2026-08-21T22:34:23.645472323Z [inf]      854▕                 ? UniqueConstraintViolationException::class
+2026-08-21T22:34:23.645473606Z [err]  #34 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:23.645482719Z [inf]      855▕                 : QueryException::class;
+2026-08-21T22:34:23.645492063Z [err]  #35 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:23.645495031Z [inf]      856▕ 
+2026-08-21T22:34:23.645506519Z [err]  #36 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:23.645514196Z [err]  #37 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:23.645521926Z [err]  #38 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:23.645528518Z [err]  #39 {main}
+2026-08-21T22:34:23.645534801Z [err]  "} 
+2026-08-21T22:34:23.645541817Z [inf]  
+2026-08-21T22:34:23.645550222Z [inf]     Illuminate\Database\QueryException 
+2026-08-21T22:34:23.645556831Z [inf]  
+2026-08-21T22:34:23.645564397Z [inf]    could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`)
+2026-08-21T22:34:23.645571221Z [inf]  
+2026-08-21T22:34:23.647763648Z [inf]    ➜ 857▕             $exception = new $exceptionType(
+2026-08-21T22:34:23.647777120Z [inf]      858▕                 $this->getNameWithReadWriteType(),
+2026-08-21T22:34:23.647786780Z [inf]      859▕                 $query,
+2026-08-21T22:34:23.647794667Z [inf]      860▕                 $this->prepareBindings($bindings),
+2026-08-21T22:34:23.647803865Z [inf]      861▕                 $e,
+2026-08-21T22:34:23.647812080Z [inf]  
+2026-08-21T22:34:23.647819973Z [inf]        [2m+39 vendor frames [22m
+2026-08-21T22:34:23.647828536Z [inf]  
+2026-08-21T22:34:23.647837373Z [inf]    40  artisan:16
+2026-08-21T22:34:23.647845482Z [inf]        Illuminate\Foundation\Application::handleCommand()
+2026-08-21T22:34:23.647852221Z [inf]  
+2026-08-21T22:34:24.962376980Z [inf]  Running migrations and seeding database ...
+2026-08-21T22:34:25.723880155Z [err]  [2026-08-21 22:34:25] production.ERROR: could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) at /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php:857)
+2026-08-21T22:34:25.723891784Z [err]  [stacktrace]
+2026-08-21T22:34:25.723902681Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:25.723911694Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:25.723920114Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:25.723928213Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:25.723935725Z [err]  #4 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:25.723944641Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:25.723952507Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:25.725927253Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:25.725939302Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:25.725949474Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:25.725959261Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:25.725968679Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:25.725978263Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:25.725986421Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:25.726002734Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:25.726010202Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:25.726018706Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:25.727733705Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:25.727745067Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:25.727754090Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:25.727760475Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:25.727766532Z [err]  #21 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:25.727773220Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:25.727779422Z [err]  #23 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:25.727790403Z [err]  #24 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:25.727797574Z [err]  #25 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:25.727805210Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:25.727812562Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:25.727819032Z [err]  #28 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:25.727825763Z [err]  #29 {main}
+2026-08-21T22:34:25.727832378Z [err]  
+2026-08-21T22:34:25.727839031Z [err]  [previous exception] [object] (PDOException(code: 0): could not find driver at /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+2026-08-21T22:34:25.730151540Z [err]  [stacktrace]
+2026-08-21T22:34:25.730158501Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+2026-08-21T22:34:25.730163003Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
+2026-08-21T22:34:25.730168051Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
+2026-08-21T22:34:25.730172551Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(220): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
+2026-08-21T22:34:25.730177266Z [err]  #4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->{closure:Illuminate\\Database\\Connectors\\ConnectionFactory::createPdoResolverWithHosts():213}()
+2026-08-21T22:34:25.730182467Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1297): call_user_func()
+2026-08-21T22:34:25.730186758Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1335): Illuminate\\Database\\Connection->getPdo()
+2026-08-21T22:34:25.730191324Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(542): Illuminate\\Database\\Connection->getReadPdo()
+2026-08-21T22:34:25.730195868Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(435): Illuminate\\Database\\Connection->getPdoForSelect()
+2026-08-21T22:34:25.730200436Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(846): Illuminate\\Database\\Connection->{closure:Illuminate\\Database\\Connection::select():426}()
+2026-08-21T22:34:25.730206383Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:25.732243498Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:25.732250646Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:25.732255575Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:25.732260212Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:25.732266065Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:25.732272076Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:25.732278431Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:25.732284914Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:25.732291113Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:25.732297106Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:25.735746523Z [err]  #21 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:25.735760068Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:25.735767867Z [err]  #23 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:25.735774356Z [err]  #24 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:25.735780484Z [err]  #25 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:25.735788633Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:25.735794860Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:25.735801393Z [err]  #28 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:25.735807053Z [err]  #29 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:25.735813084Z [err]  #30 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:25.735819484Z [err]  #31 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:25.735825852Z [err]  #32 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:25.738801872Z [err]  #33 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:25.738808590Z [err]  #34 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:25.738817267Z [err]  #35 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:25.738822489Z [err]  #36 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:25.738828289Z [err]  #37 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:25.738833601Z [err]  #38 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:25.738838644Z [err]  #39 {main}
+2026-08-21T22:34:25.738843996Z [err]  "} 
+2026-08-21T22:34:25.738849318Z [inf]  
+2026-08-21T22:34:25.738855517Z [inf]     Illuminate\Database\QueryException 
+2026-08-21T22:34:25.738860967Z [inf]  
+2026-08-21T22:34:25.738866780Z [inf]    could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`)
+2026-08-21T22:34:25.738872809Z [inf]  
+2026-08-21T22:34:25.738878585Z [inf]    at vendor/laravel/framework/src/Illuminate/Database/Connection.php:857
+2026-08-21T22:34:25.738885228Z [inf]      853▕             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+2026-08-21T22:34:25.738890963Z [inf]      854▕                 ? UniqueConstraintViolationException::class
+2026-08-21T22:34:25.738896336Z [inf]      855▕                 : QueryException::class;
+2026-08-21T22:34:25.738901540Z [inf]      856▕ 
+2026-08-21T22:34:25.743837222Z [inf]    ➜ 857▕             $exception = new $exceptionType(
+2026-08-21T22:34:25.743843625Z [inf]      858▕                 $this->getNameWithReadWriteType(),
+2026-08-21T22:34:25.743848204Z [inf]      859▕                 $query,
+2026-08-21T22:34:25.743851888Z [inf]      860▕                 $this->prepareBindings($bindings),
+2026-08-21T22:34:25.743856241Z [inf]      861▕                 $e,
+2026-08-21T22:34:25.743860408Z [inf]  
+2026-08-21T22:34:25.743864277Z [inf]        [2m+39 vendor frames [22m
+2026-08-21T22:34:25.743868187Z [inf]  
+2026-08-21T22:34:25.743871859Z [inf]    40  artisan:16
+2026-08-21T22:34:25.743876000Z [inf]        Illuminate\Foundation\Application::handleCommand()
+2026-08-21T22:34:25.743880560Z [inf]  
+2026-08-21T22:34:26.621924719Z [inf]  Running migrations and seeding database ...
+2026-08-21T22:34:26.621936471Z [err]  [2026-08-21 22:34:26] production.ERROR: could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) at /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php:857)
+2026-08-21T22:34:26.621954366Z [err]  [stacktrace]
+2026-08-21T22:34:26.621961019Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:26.621978364Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:26.621987459Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:26.621993957Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:26.622002137Z [err]  #4 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:26.622009346Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:26.622015926Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:26.625427565Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:26.625440040Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:26.625447807Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:26.625455907Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:26.625465377Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:26.625474286Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:26.625483223Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:26.625491969Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:26.625498825Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:26.625506777Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:26.627255645Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:26.627267819Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:26.627277154Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:26.627284288Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:26.627291696Z [err]  #21 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:26.627303729Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:26.627311257Z [err]  #23 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:26.627320570Z [err]  #24 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:26.627328036Z [err]  #25 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:26.627336284Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:26.627343225Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:26.627349933Z [err]  #28 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:26.627356655Z [err]  #29 {main}
+2026-08-21T22:34:26.627364182Z [err]  
+2026-08-21T22:34:26.627371185Z [err]  [previous exception] [object] (PDOException(code: 0): could not find driver at /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+2026-08-21T22:34:26.628865225Z [err]  [stacktrace]
+2026-08-21T22:34:26.628873141Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+2026-08-21T22:34:26.628879345Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
+2026-08-21T22:34:26.628886101Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
+2026-08-21T22:34:26.628891609Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(220): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
+2026-08-21T22:34:26.628896601Z [err]  #4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->{closure:Illuminate\\Database\\Connectors\\ConnectionFactory::createPdoResolverWithHosts():213}()
+2026-08-21T22:34:26.628903465Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1297): call_user_func()
+2026-08-21T22:34:26.628910346Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1335): Illuminate\\Database\\Connection->getPdo()
+2026-08-21T22:34:26.628917255Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(542): Illuminate\\Database\\Connection->getReadPdo()
+2026-08-21T22:34:26.628927131Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(435): Illuminate\\Database\\Connection->getPdoForSelect()
+2026-08-21T22:34:26.628935198Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(846): Illuminate\\Database\\Connection->{closure:Illuminate\\Database\\Connection::select():426}()
+2026-08-21T22:34:26.628945227Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:26.631304243Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:26.631311755Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:26.631316270Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:26.631321371Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:26.631325472Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:26.631329885Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:26.631334361Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:26.631338491Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:26.631342916Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:26.631347618Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:26.633198788Z [err]  #21 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:26.633208898Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:26.633216842Z [err]  #23 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:26.633223039Z [err]  #24 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:26.633228272Z [err]  #25 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:26.633233567Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:26.633238473Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:26.633243611Z [err]  #28 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:26.633248469Z [err]  #29 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:26.633253491Z [err]  #30 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:26.633258740Z [err]  #31 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:26.633263662Z [err]  #32 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:26.636015071Z [err]  #33 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:26.636026478Z [err]  #34 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:26.636031951Z [err]  #35 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:26.636040262Z [err]  #36 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:26.636045511Z [err]  #37 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:26.636050598Z [err]  #38 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:26.636055866Z [err]  #39 {main}
+2026-08-21T22:34:26.636060154Z [err]  "} 
+2026-08-21T22:34:26.636066370Z [inf]  
+2026-08-21T22:34:26.636071192Z [inf]     Illuminate\Database\QueryException 
+2026-08-21T22:34:26.636075383Z [inf]  
+2026-08-21T22:34:26.636080159Z [inf]    could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`)
+2026-08-21T22:34:26.636084221Z [inf]  
+2026-08-21T22:34:26.636089207Z [inf]    at vendor/laravel/framework/src/Illuminate/Database/Connection.php:857
+2026-08-21T22:34:26.636093442Z [inf]      853▕             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+2026-08-21T22:34:26.636100058Z [inf]      854▕                 ? UniqueConstraintViolationException::class
+2026-08-21T22:34:26.636105292Z [inf]      855▕                 : QueryException::class;
+2026-08-21T22:34:26.636110623Z [inf]      856▕ 
+2026-08-21T22:34:26.639550104Z [inf]    ➜ 857▕             $exception = new $exceptionType(
+2026-08-21T22:34:26.639562424Z [inf]      858▕                 $this->getNameWithReadWriteType(),
+2026-08-21T22:34:26.639564829Z [inf]  
+2026-08-21T22:34:26.639570582Z [inf]      859▕                 $query,
+2026-08-21T22:34:26.639576789Z [inf]      860▕                 $this->prepareBindings($bindings),
+2026-08-21T22:34:26.639582647Z [inf]      861▕                 $e,
+2026-08-21T22:34:26.639589677Z [inf]  
+2026-08-21T22:34:26.639595684Z [inf]        [2m+39 vendor frames [22m
+2026-08-21T22:34:26.639601721Z [inf]  
+2026-08-21T22:34:26.639608372Z [inf]    40  artisan:16
+2026-08-21T22:34:26.639615608Z [inf]        Illuminate\Foundation\Application::handleCommand()
+2026-08-21T22:34:27.891713205Z [inf]  Running migrations and seeding database ...
+2026-08-21T22:34:28.598140155Z [err]  [2026-08-21 22:34:28] production.ERROR: could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) at /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php:857)
+2026-08-21T22:34:28.598146746Z [err]  [stacktrace]
+2026-08-21T22:34:28.598155272Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:28.598161293Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:28.598167001Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:28.598173172Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:28.598180282Z [err]  #4 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:28.598187404Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:28.598193999Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:28.599312544Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:28.599321220Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:28.599321458Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:28.599328921Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:28.599333335Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:28.599336445Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:28.599341571Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:28.599347092Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:28.599352288Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:28.599356870Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:28.601324359Z [err]  #28 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:28.601334639Z [err]  #29 {main}
+2026-08-21T22:34:28.601342364Z [err]  
+2026-08-21T22:34:28.601349937Z [err]  [previous exception] [object] (PDOException(code: 0): could not find driver at /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+2026-08-21T22:34:28.601350300Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:28.601357526Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:28.601363619Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:28.601367939Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:28.601372155Z [err]  #21 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:28.601377346Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:28.601383130Z [err]  #23 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:28.601389644Z [err]  #24 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:28.601395594Z [err]  #25 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:28.601401244Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:28.601406868Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:28.603477277Z [err]  [stacktrace]
+2026-08-21T22:34:28.603483132Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+2026-08-21T22:34:28.603488020Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
+2026-08-21T22:34:28.603492971Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
+2026-08-21T22:34:28.603497354Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(220): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
+2026-08-21T22:34:28.603502167Z [err]  #4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->{closure:Illuminate\\Database\\Connectors\\ConnectionFactory::createPdoResolverWithHosts():213}()
+2026-08-21T22:34:28.603507241Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1297): call_user_func()
+2026-08-21T22:34:28.603511572Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1335): Illuminate\\Database\\Connection->getPdo()
+2026-08-21T22:34:28.603516294Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(542): Illuminate\\Database\\Connection->getReadPdo()
+2026-08-21T22:34:28.603520610Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(435): Illuminate\\Database\\Connection->getPdoForSelect()
+2026-08-21T22:34:28.603525347Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(846): Illuminate\\Database\\Connection->{closure:Illuminate\\Database\\Connection::select():426}()
+2026-08-21T22:34:28.603529812Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:28.605324564Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:28.605337228Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:28.605345651Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:28.605353986Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:28.605361579Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:28.605368833Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:28.605389985Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:28.605399332Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:28.605405915Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:28.605412394Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:28.607226346Z [err]  #21 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:28.607231533Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:28.607236141Z [err]  #23 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:28.607240179Z [err]  #24 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:28.607247550Z [err]  #25 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:28.607253365Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:28.607258682Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:28.607264658Z [err]  #28 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:28.607269995Z [err]  #29 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:28.607276653Z [err]  #30 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:28.607282483Z [err]  #31 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:28.607287913Z [err]  #32 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:28.609414380Z [inf]  
+2026-08-21T22:34:28.609424177Z [err]  #33 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:28.609433352Z [err]  #34 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:28.609438236Z [inf]    at vendor/laravel/framework/src/Illuminate/Database/Connection.php:857
+2026-08-21T22:34:28.609440356Z [err]  #35 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:28.609448327Z [err]  #36 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:28.609448380Z [inf]      853▕             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+2026-08-21T22:34:28.609456366Z [inf]      854▕                 ? UniqueConstraintViolationException::class
+2026-08-21T22:34:28.609458248Z [err]  #37 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:28.609464384Z [inf]      855▕                 : QueryException::class;
+2026-08-21T22:34:28.609466107Z [err]  #38 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:28.609472733Z [inf]      856▕ 
+2026-08-21T22:34:28.609473170Z [err]  #39 {main}
+2026-08-21T22:34:28.609479599Z [err]  "} 
+2026-08-21T22:34:28.609485778Z [inf]  
+2026-08-21T22:34:28.609491772Z [inf]     Illuminate\Database\QueryException 
+2026-08-21T22:34:28.609497522Z [inf]  
+2026-08-21T22:34:28.609504495Z [inf]    could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`)
+2026-08-21T22:34:28.611179956Z [inf]    ➜ 857▕             $exception = new $exceptionType(
+2026-08-21T22:34:28.611189633Z [inf]      858▕                 $this->getNameWithReadWriteType(),
+2026-08-21T22:34:28.611196210Z [inf]      859▕                 $query,
+2026-08-21T22:34:28.611202018Z [inf]      860▕                 $this->prepareBindings($bindings),
+2026-08-21T22:34:28.611207651Z [inf]      861▕                 $e,
+2026-08-21T22:34:28.611213101Z [inf]  
+2026-08-21T22:34:28.611218774Z [inf]        [2m+39 vendor frames [22m
+2026-08-21T22:34:28.611224719Z [inf]  
+2026-08-21T22:34:28.611230542Z [inf]    40  artisan:16
+2026-08-21T22:34:28.611238349Z [inf]        Illuminate\Foundation\Application::handleCommand()
+2026-08-21T22:34:28.611244007Z [inf]  
+2026-08-21T22:34:29.698198891Z [inf]  Running migrations and seeding database ...
+2026-08-21T22:34:29.698205307Z [err]  [2026-08-21 22:34:29] production.ERROR: could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`) at /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php:857)
+2026-08-21T22:34:29.698211325Z [err]  [stacktrace]
+2026-08-21T22:34:29.698217501Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:29.698223556Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:29.698229346Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:29.698236053Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:29.698241939Z [err]  #4 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:29.698248075Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:29.698256781Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:29.700967346Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:29.700976335Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:29.700982978Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:29.700989529Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:29.700995242Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:29.701000789Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:29.701006619Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:29.701012944Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:29.701019818Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:29.701025669Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:29.708066436Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:29.708078862Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:29.708085503Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:29.708091926Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:29.708098898Z [err]  #21 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:29.708105604Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:29.708112680Z [err]  #23 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:29.708119729Z [err]  #24 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:29.708123533Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:29.708126636Z [err]  #25 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:29.708133278Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:29.708137085Z [err]  #28 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:29.708145124Z [err]  #29 {main}
+2026-08-21T22:34:29.708153366Z [err]  
+2026-08-21T22:34:29.708160672Z [err]  [previous exception] [object] (PDOException(code: 0): could not find driver at /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:67)
+2026-08-21T22:34:29.714996543Z [err]  [stacktrace]
+2026-08-21T22:34:29.715007963Z [err]  #0 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): PDO::connect()
+2026-08-21T22:34:29.715014117Z [err]  #1 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
+2026-08-21T22:34:29.715019505Z [err]  #2 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
+2026-08-21T22:34:29.715025316Z [err]  #3 /app/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(220): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
+2026-08-21T22:34:29.715031424Z [err]  #4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->{closure:Illuminate\\Database\\Connectors\\ConnectionFactory::createPdoResolverWithHosts():213}()
+2026-08-21T22:34:29.715036994Z [err]  #5 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1297): call_user_func()
+2026-08-21T22:34:29.715043315Z [err]  #6 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1335): Illuminate\\Database\\Connection->getPdo()
+2026-08-21T22:34:29.715049254Z [err]  #7 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(542): Illuminate\\Database\\Connection->getReadPdo()
+2026-08-21T22:34:29.715054879Z [err]  #8 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(435): Illuminate\\Database\\Connection->getPdoForSelect()
+2026-08-21T22:34:29.715059843Z [err]  #9 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(846): Illuminate\\Database\\Connection->{closure:Illuminate\\Database\\Connection::select():426}()
+2026-08-21T22:34:29.715064995Z [err]  #10 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(813): Illuminate\\Database\\Connection->runQueryCallback()
+2026-08-21T22:34:29.717517475Z [err]  #11 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(426): Illuminate\\Database\\Connection->run()
+2026-08-21T22:34:29.717525330Z [err]  #12 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(371): Illuminate\\Database\\Connection->select()
+2026-08-21T22:34:29.717529843Z [err]  #13 /app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(388): Illuminate\\Database\\Connection->selectOne()
+2026-08-21T22:34:29.717534586Z [err]  #14 /app/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(176): Illuminate\\Database\\Connection->scalar()
+2026-08-21T22:34:29.717538883Z [err]  #15 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(185): Illuminate\\Database\\Schema\\Builder->hasTable()
+2026-08-21T22:34:29.717543128Z [err]  #16 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(797): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+2026-08-21T22:34:29.717547201Z [err]  #17 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+2026-08-21T22:34:29.717551244Z [err]  #18 /app/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::repositoryExists():166}()
+2026-08-21T22:34:29.717554977Z [err]  #19 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(166): retry()
+2026-08-21T22:34:29.717558988Z [err]  #20 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(142): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
+2026-08-21T22:34:29.721621932Z [err]  #21 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(112): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+2026-08-21T22:34:29.721633741Z [err]  #22 /app/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(672): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::runMigrations():111}()
+2026-08-21T22:34:29.721640982Z [err]  #23 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(111): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+2026-08-21T22:34:29.721647606Z [err]  #24 /app/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(90): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->runMigrations()
+2026-08-21T22:34:29.721654125Z [err]  #25 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+2026-08-21T22:34:29.721661614Z [err]  #26 /app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+2026-08-21T22:34:29.721667771Z [err]  #27 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
+2026-08-21T22:34:29.721675966Z [err]  #28 /app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+2026-08-21T22:34:29.721681950Z [err]  #29 /app/vendor/laravel/framework/src/Illuminate/Container/Container.php(801): Illuminate\\Container\\BoundMethod::call()
+2026-08-21T22:34:29.721688439Z [err]  #30 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(292): Illuminate\\Container\\Container->call()
+2026-08-21T22:34:29.721694196Z [err]  #31 /app/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+2026-08-21T22:34:29.721699856Z [err]  #32 /app/vendor/laravel/framework/src/Illuminate/Console/Command.php(261): Symfony\\Component\\Console\\Command\\Command->run()
+2026-08-21T22:34:29.725055084Z [err]  #33 /app/vendor/symfony/console/Application.php(1117): Illuminate\\Console\\Command->run()
+2026-08-21T22:34:29.725067878Z [inf]    at vendor/laravel/framework/src/Illuminate/Database/Connection.php:857
+2026-08-21T22:34:29.725076776Z [inf]      853▕             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+2026-08-21T22:34:29.725082580Z [inf]      854▕                 ? UniqueConstraintViolationException::class
+2026-08-21T22:34:29.725083389Z [err]  #34 /app/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+2026-08-21T22:34:29.725090584Z [inf]      855▕                 : QueryException::class;
+2026-08-21T22:34:29.725090652Z [err]  #35 /app/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+2026-08-21T22:34:29.725097537Z [err]  #36 /app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+2026-08-21T22:34:29.725098410Z [inf]      856▕ 
+2026-08-21T22:34:29.725109813Z [err]  #37 /app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1242): Illuminate\\Foundation\\Console\\Kernel->handle()
+2026-08-21T22:34:29.725115650Z [err]  #38 /app/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
+2026-08-21T22:34:29.725120345Z [err]  #39 {main}
+2026-08-21T22:34:29.725125029Z [err]  "} 
+2026-08-21T22:34:29.725130148Z [inf]  
+2026-08-21T22:34:29.725134460Z [inf]     Illuminate\Database\QueryException 
+2026-08-21T22:34:29.725138989Z [inf]  
+2026-08-21T22:34:29.725144888Z [inf]    could not find driver (Connection: mysql, Host: mysql.railway.internal, Port: 3306, Database: railway, SQL: select exists (select 1 from information_schema.tables where table_schema = schema() and table_name = 'migrations' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED')) as `exists`)
+2026-08-21T22:34:29.725149262Z [inf]  
+2026-08-21T22:34:29.727623412Z [inf]    ➜ 857▕             $exception = new $exceptionType(
+2026-08-21T22:34:29.727634861Z [inf]      858▕                 $this->getNameWithReadWriteType(),
+2026-08-21T22:34:29.727644600Z [inf]      859▕                 $query,
+2026-08-21T22:34:29.727651237Z [inf]      860▕                 $this->prepareBindings($bindings),
+2026-08-21T22:34:29.727657234Z [inf]      861▕                 $e,
+2026-08-21T22:34:29.727665015Z [inf]  
+2026-08-21T22:34:29.727671496Z [inf]        [2m+39 vendor frames [22m
+2026-08-21T22:34:29.727677232Z [inf]  
+2026-08-21T22:34:29.727682294Z [inf]    40  artisan:16
+2026-08-21T22:34:29.727689840Z [inf]        Illuminate\Foundation\Application::handleCommand()
+2026-08-21T22:34:29.727695998Z [inf]  
