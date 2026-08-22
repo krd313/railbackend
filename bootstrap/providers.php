@@ -5,5 +5,5 @@ use App\Providers\PailServiceProvider;
 
 return [
     AppServiceProvider::class,
-    PailServiceProvider::class,
+    Laravel\Pail\PailServiceProvider::class,
 ];
