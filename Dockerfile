@@ -36,7 +36,8 @@ RUN COMPOSER_ALLOW_SUPERUSER=1 composer dump-autoload \
     --optimize \
     --no-scripts
 
-RUN php artisan package:discover --ansi
+RUN rm -f bootstrap/cache/packages.php bootstrap/cache/services.php \
+    && php artisan package:discover --ansi
 
 EXPOSE 8000
 
